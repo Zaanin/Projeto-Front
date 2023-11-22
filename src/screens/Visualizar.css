@@ -1,0 +1,96 @@
+/* src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.chat-geral {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url(https://tm.ibxk.com.br/2016/09/13/13162448904561.jpg?ims=1200x675);
+}
+
+.chat-header {
+  background-color: #25d366;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+}
+
+.chat-mensagem {
+  padding: 20px;
+  overflow-y: scroll;
+  flex-grow: 1;
+}
+
+.mensagem {
+  background-color: #e1ffc7;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  clear: both;
+}
+
+.mensagem.enviada {
+  float: right;
+  background-color: #dcf8c6;
+}
+
+.mensagem.recebida {
+  float: left;
+}
+
+.mensagem-input-conteiner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Alinha os itens à esquerda e à direita */
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.mensagem-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+}
+
+.botao-enviar {
+  background-color: #25d366;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.botao-enviar:hover {
+  background-color: #99FF66;
+}
+
+.botao-alternar {
+  background-color: #fff;
+  color: #25d366;
+  border: none;
+  border-radius: 25px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-left: 10px;
+}
+
+.botao-alternar:hover {
+  background-color: #25d366;
+  color: #fff;
+}
