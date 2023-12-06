@@ -11,7 +11,7 @@ const MenuVertical = () => {
           <button>Cadastro de Usuário</button>
         </Link>
         <div className="buttonContainer">
-          <button>Cadastro de Aluno</button>
+          <button>Cadastro de Alunoo</button>
           <button>DashBoard Turma</button>
           <button>Agenda Direção</button>
           {/* Adicione mais botões conforme necessário */}
