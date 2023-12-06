@@ -3,8 +3,6 @@ import './cadastroCli.css'; // Importe os estilos
 
 interface CadastroProps {
   onSubmit: (dados: CadastroDados) => void;
-  dadosFormulario: CadastroDados;
-  handleChange: (campo: keyof CadastroDados, valor: string | number) => void;
 }
 
 interface CadastroDados {
@@ -12,23 +10,41 @@ interface CadastroDados {
   idade: number;
   cpf: string;
   genero: string;
+  senha: string;
 }
 
-const TelaCadastro: React.FC<CadastroProps> = ({
-  onSubmit,
-  dadosFormulario,
-  handleChange,
-}) => {
+const TelaCadastro: React.FC<CadastroProps> = ({ onSubmit }) => {
   const [cadastradoComSucesso, setCadastradoComSucesso] = useState(false);
+  const [dadosFormulario, setDadosFormulario] = useState<CadastroDados>({
+    nome: '',
+    idade: 0,
+    cpf: '',
+    genero: '',
+    senha: '',
+  });
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     onSubmit(dadosFormulario);
     setCadastradoComSucesso(true);
+    setDadosFormulario({
+      nome: '',
+      idade: 0,
+      cpf: '',
+      genero: '',
+      senha: '',
+    });
   };
 
   const handleClosePopup = () => {
     setCadastradoComSucesso(false);
+  };
+
+  const handleChange = (campo: keyof CadastroDados, valor: string | number) => {
+    setDadosFormulario((prevDados) => ({
+      ...prevDados,
+      [campo]: valor,
+    }));
   };
 
   return (
@@ -49,9 +65,9 @@ const TelaCadastro: React.FC<CadastroProps> = ({
           Idade:
           <input
             type="number"
-            value={dadosFormulario.idade}
+            value={dadosFormulario.idade >= 0 ? dadosFormulario.idade : ''}
             onChange={(e) =>
-              handleChange('idade', parseInt(e.target.value, 10))
+              handleChange('idade', e.target.value !== '' ? Math.max(0, parseInt(e.target.value, 10)) : 0)
             }
             className="input-field"
           />
@@ -79,6 +95,16 @@ const TelaCadastro: React.FC<CadastroProps> = ({
             <option value="Feminino">Feminino</option>
             <option value="Outro">Outro</option>
           </select>
+        </label>
+
+        <label>
+          Senha:
+          <input
+            type="password"
+            value={dadosFormulario.senha}
+            onChange={(e) => handleChange('senha', e.target.value)}
+            className="input-field"
+          />
         </label>
 
         <button type="submit" className="submit-button">
