@@ -33,7 +33,7 @@ const TelaCadastro: React.FC<CadastroProps> = ({
 
   return (
     <div className="tela-cadastro">
-      <h2>Cadastro de Presença</h2>
+      <h2>Cadastro de Usuário</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Nome:
