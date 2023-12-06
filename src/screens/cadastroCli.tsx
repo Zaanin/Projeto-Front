@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './cadastroCli.css'; // Importe os estilos
 
 interface CadastroProps {
@@ -19,9 +19,16 @@ const TelaCadastro: React.FC<CadastroProps> = ({
   dadosFormulario,
   handleChange,
 }) => {
+  const [cadastradoComSucesso, setCadastradoComSucesso] = useState(false);
+
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     onSubmit(dadosFormulario);
+    setCadastradoComSucesso(true);
+  };
+
+  const handleClosePopup = () => {
+    setCadastradoComSucesso(false);
   };
 
   return (
@@ -78,6 +85,13 @@ const TelaCadastro: React.FC<CadastroProps> = ({
           Cadastrar
         </button>
       </form>
+
+      {cadastradoComSucesso && (
+        <div className="popup">
+          <p>Cadastrado com sucesso!</p>
+          <button onClick={handleClosePopup}>Fechar</button>
+        </div>
+      )}
     </div>
   );
 };
