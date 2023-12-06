@@ -1,0 +1,48 @@
+/* Dashboard.css */
+.dashboard {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .dashboard-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .chart-container {
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  .chart {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .student-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .student-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .student-name {
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+  
+  .student-grade {
+    margin: 0;
+    font-size: 16px;
+  }
+  

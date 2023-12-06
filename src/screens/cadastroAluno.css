@@ -1,0 +1,40 @@
+/* CadastroAluno.css */
+
+.cadastro-aluno-container {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .cadastro-aluno-title {
+    color: #333;
+  }
+  
+  .cadastro-aluno-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cadastro-aluno-label {
+    margin: 10px;
+  }
+  
+  .cadastro-aluno-input,
+  .cadastro-aluno-select {
+    padding: 8px;
+    margin: 5px 0;
+  }
+  
+  .cadastro-aluno-submit {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cadastro-aluno-submit:hover {
+    background-color: #0056b3;
+  }
+  
